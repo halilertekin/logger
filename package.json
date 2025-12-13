@@ -1,5 +1,5 @@
 {
-  "name": "@vetaverse/logger",
+  "name": "@2run/logger",
   "version": "1.0.0",
   "description": "Lightweight, type-safe logger with history, transports, and JSON support for Node.js and React Native",
   "main": "dist/index.js",
@@ -51,16 +51,16 @@
     "file-logging",
     "mobile"
   ],
-  "author": "Vetaverse Team",
+  "author": "2Run <halil@2run.be>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vetaverse/logger.git"
+    "url": "https://github.com/2run/logger.git"
   },
   "bugs": {
-    "url": "https://github.com/vetaverse/logger/issues"
+    "url": "https://github.com/2run/logger/issues"
   },
-  "homepage": "https://github.com/vetaverse/logger#readme",
+  "homepage": "https://github.com/2run/logger#readme",
   "peerDependencies": {
     "react-native": ">=0.60.0"
   },

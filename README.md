@@ -1,6 +1,6 @@
-# @vetaverse/logger
+# @2run/logger
 
-[![npm version](https://img.shields.io/npm/v/@vetaverse/logger.svg)](https://www.npmjs.com/package/@vetaverse/logger)
+[![npm version](https://img.shields.io/npm/v/@2run/logger.svg)](https://www.npmjs.com/package/@2run/logger)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
 
@@ -23,11 +23,11 @@ Lightweight, type-safe logger with history, transports, and JSON support for Nod
 ## Installation
 
 ```bash
-npm install @vetaverse/logger
+npm install @2run/logger
 # or
-yarn add @vetaverse/logger
+yarn add @2run/logger
 # or
-pnpm add @vetaverse/logger
+pnpm add @2run/logger
 ```
 
 ## Quick Start
@@ -35,7 +35,7 @@ pnpm add @vetaverse/logger
 ### Basic Usage
 
 ```typescript
-import { logger } from '@vetaverse/logger';
+import { logger } from '@2run/logger';
 
 // Simple logging
 logger.info('Application started');
@@ -47,7 +47,7 @@ logger.error('Error occurred', { error: new Error('Something went wrong') });
 ### Custom Logger with Configuration
 
 ```typescript
-import { createLogger, JSONFormatter, FileTransport } from '@vetaverse/logger';
+import { createLogger, JSONFormatter, FileTransport } from '@2run/logger';
 
 const logger = createLogger({
   prefix: 'MyApp',
@@ -62,7 +62,7 @@ logger.info('Configured logger ready');
 ### JSON Logging (Structured Logs)
 
 ```typescript
-import { createLogger, JSONFormatter, ConsoleTransport } from '@vetaverse/logger';
+import { createLogger, JSONFormatter, ConsoleTransport } from '@2run/logger';
 
 const logger = createLogger({
   transports: [new ConsoleTransport(new JSONFormatter())],
@@ -75,7 +75,7 @@ logger.info('User action', { userId: 123, action: 'login' });
 ### File Logging (Node.js)
 
 ```typescript
-import { createLogger, FileTransport } from '@vetaverse/logger';
+import { createLogger, FileTransport } from '@2run/logger';
 
 const logger = createLogger({
   transports: [
@@ -93,7 +93,7 @@ logger.info('This will be written to file');
 ### Multiple Transports
 
 ```typescript
-import { createLogger, ConsoleTransport, FileTransport, JSONFormatter } from '@vetaverse/logger';
+import { createLogger, ConsoleTransport, FileTransport, JSONFormatter } from '@2run/logger';
 
 const logger = createLogger({
   transports: [
@@ -112,7 +112,7 @@ logger.info('Logged to console and two files');
 ### Log Subscriptions
 
 ```typescript
-import { logger } from '@vetaverse/logger';
+import { logger } from '@2run/logger';
 
 // Subscribe to all log events
 const unsubscribe = logger.subscribe((entry) => {
@@ -129,7 +129,7 @@ unsubscribe();
 ### React Native Integration
 
 ```typescript
-import { createLogger } from '@vetaverse/logger';
+import { createLogger } from '@2run/logger';
 
 // Logger automatically detects React Native platform
 const logger = createLogger({
@@ -224,8 +224,8 @@ interface Formatter {
 ### Example: Custom Transport
 
 ```typescript
-import { createLogger } from '@vetaverse/logger';
-import type { Transport, LogEntry } from '@vetaverse/logger';
+import { createLogger } from '@2run/logger';
+import type { Transport, LogEntry } from '@2run/logger';
 
 class RemoteTransport implements Transport {
   async log(entry: LogEntry) {
@@ -244,7 +244,7 @@ const logger = createLogger({
 ### Example: Conditional Logging
 
 ```typescript
-import { createLogger } from '@vetaverse/logger';
+import { createLogger } from '@2run/logger';
 
 const logger = createLogger({
   minLogLevel: process.env.NODE_ENV === 'production' ? 'warn' : 'debug',
@@ -260,7 +260,7 @@ logger.error('Critical error');
 ### Example: Correlation IDs
 
 ```typescript
-import { createLogger } from '@vetaverse/logger';
+import { createLogger } from '@2run/logger';
 import { v4 as uuidv4 } from 'uuid';
 
 const logger = createLogger({
@@ -295,14 +295,14 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## License
 
-MIT © [Vetaverse Team](https://github.com/vetaverse)
+MIT © [2Run](https://github.com/2run)
 
 ## Support
 
-- 📧 Email: [info@vetaversevet.com](mailto:info@vetaversevet.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/vetaverse/logger/issues)
-- 📖 Documentation: [API Docs](https://github.com/vetaverse/logger#readme)
+- 📧 Email: [halil@2run.be](mailto:halil@2run.be)
+- 🐛 Issues: [GitHub Issues](https://github.com/2run/logger/issues)
+- 📖 Documentation: [API Docs](https://github.com/2run/logger#readme)
 
 ---
 
-Made with ❤️ by the Vetaverse team
+Made with ❤️ by the 2Run team
