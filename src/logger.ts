@@ -39,7 +39,7 @@ function getPlatformInfo(): PlatformInfo {
  */
 function isDevelopment(): boolean {
   if (typeof process !== 'undefined' && process.env) {
-    return process.env.NODE_ENV === 'development';
+    return process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'test';
   }
   // For React Native, check __DEV__ global
   if (typeof globalThis !== 'undefined' && '__DEV__' in globalThis) {

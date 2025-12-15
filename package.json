@@ -1,6 +1,6 @@
 {
   "name": "@2run/logger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Lightweight, type-safe logger with history, transports, and JSON support for Node.js and React Native",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

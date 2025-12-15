@@ -38,4 +38,6 @@ pnpm-debug.log*
 # Misc
 .cache/
 .temp/
-tmp/
+
+# NPM
+.npmrc
