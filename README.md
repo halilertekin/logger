@@ -295,13 +295,13 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 
 ## License
 
-MIT © [2Run](https://github.com/2run)
+MIT © [2Run](https://github.com/halilertekin)
 
 ## Support
 
 - 📧 Email: [halil@2run.be](mailto:halil@2run.be)
-- 🐛 Issues: [GitHub Issues](https://github.com/2run/logger/issues)
-- 📖 Documentation: [API Docs](https://github.com/2run/logger#readme)
+- 🐛 Issues: [GitHub Issues](https://github.com/halilertekin/logger/issues)
+- 📖 Documentation: [API Docs](https://github.com/halilertekin/logger#readme)
 
 ---
 

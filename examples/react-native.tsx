@@ -1,10 +1,10 @@
 /**
- * React Native usage example for @vetaverse/logger
+ * React Native usage example for @2run/logger
  */
 
 import React, { useEffect, useState } from 'react';
 import { View, Text, Button, ScrollView } from 'react-native';
-import { createLogger, type LogEntry } from '@vetaverse/logger';
+import { createLogger, type LogEntry } from '@2run/logger';
 
 // Create a logger instance with React Native optimizations
 const logger = createLogger({

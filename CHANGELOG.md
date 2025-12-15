@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial release of @vetaverse/logger
+- Initial release of @2run/logger
 - Core logger with debug, info, warn, error methods
 - TypeScript support with strict mode
 - Platform detection (Node.js, React Native, Web)
@@ -41,4 +41,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Minified builds
 - Sourcemaps included
 
-[1.0.0]: https://github.com/vetaverse/logger/releases/tag/v1.0.0
+[1.0.0]: https://github.com/halilertekin/logger/releases/tag/v1.0.0

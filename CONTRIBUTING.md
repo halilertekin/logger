@@ -1,6 +1,6 @@
-# Contributing to @vetaverse/logger
+# Contributing to @2run/logger
 
-Thank you for your interest in contributing to @vetaverse/logger! This document provides guidelines and instructions for contributing.
+Thank you for your interest in contributing to @2run/logger! This document provides guidelines and instructions for contributing.
 
 ## Code of Conduct
 
@@ -45,7 +45,7 @@ Feature suggestions are welcome! Please create an issue with:
 
 ```bash
 # Clone the repository
-git clone https://github.com/vetaverse/logger.git
+git clone https://github.com/halilertekin/logger.git
 cd logger
 
 # Install dependencies
@@ -140,4 +140,4 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-Thank you for contributing to @vetaverse/logger! 🎉
+Thank you for contributing to @2run/logger! 🎉

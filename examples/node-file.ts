@@ -1,9 +1,9 @@
 /**
- * Node.js file logging example for @vetaverse/logger
+ * Node.js file logging example for @2run/logger
  * Demonstrates file rotation and multiple log files
  */
 
-import { createLogger, FileTransport, JSONFormatter, TextFormatter } from '@vetaverse/logger';
+import { createLogger, FileTransport, JSONFormatter, TextFormatter } from '@2run/logger';
 import * as path from 'path';
 
 // Create logs directory

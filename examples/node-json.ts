@@ -1,9 +1,9 @@
 /**
- * Node.js JSON logging example for @vetaverse/logger
+ * Node.js JSON logging example for @2run/logger
  * Useful for production environments with log aggregation services
  */
 
-import { createLogger, JSONFormatter, ConsoleTransport } from '@vetaverse/logger';
+import { createLogger, JSONFormatter, ConsoleTransport } from '@2run/logger';
 
 // Create a logger with JSON output
 const logger = createLogger({

@@ -55,12 +55,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/2run/logger.git"
+    "url": "https://github.com/halilertekin/logger.git"
   },
   "bugs": {
-    "url": "https://github.com/2run/logger/issues"
+    "url": "https://github.com/halilertekin/logger/issues"
   },
-  "homepage": "https://github.com/2run/logger#readme",
+  "homepage": "https://github.com/halilertekin/logger#readme",
   "peerDependencies": {
     "react-native": ">=0.60.0"
   },

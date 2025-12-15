@@ -1,8 +1,8 @@
 /**
- * Basic usage example for @vetaverse/logger
+ * Basic usage example for @2run/logger
  */
 
-import { logger, createLogger } from '@vetaverse/logger';
+import { logger, createLogger } from '@2run/logger';
 
 // Example 1: Using the default logger
 console.log('=== Example 1: Default Logger ===');
