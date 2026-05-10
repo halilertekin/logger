@@ -31,11 +31,13 @@
   ],
   "react-native": {
     "fs": "./shims/fs.js",
-    "path": "./shims/path.js"
+    "path": "./shims/path.js",
+    "https": "./shims/https.js"
   },
   "browser": {
     "fs": "./shims/fs.js",
-    "path": "./shims/path.js"
+    "path": "./shims/path.js",
+    "https": "./shims/https.js"
   },
   "scripts": {
     "build": "tsup",

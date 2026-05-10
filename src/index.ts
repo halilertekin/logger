@@ -12,6 +12,7 @@ export type {
   LoggerConfig,
   FileTransportOptions,
   MemoryTransportOptions,
+  DiscordTransportOptions,
   Logger,
 } from './types';
 
@@ -19,4 +20,4 @@ export type {
 export { TextFormatter, JSONFormatter } from './formatters';
 
 // Transports
-export { ConsoleTransport, FileTransport, MemoryTransport } from './transports';
+export { ConsoleTransport, FileTransport, MemoryTransport, DiscordTransport } from './transports';

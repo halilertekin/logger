@@ -97,6 +97,14 @@ export interface MemoryTransportOptions {
 }
 
 /**
+ * Discord transport options
+ */
+export interface DiscordTransportOptions {
+  /** Discord Webhook URL */
+  webhookUrl: string;
+}
+
+/**
  * Logger instance interface
  */
 export interface Logger {

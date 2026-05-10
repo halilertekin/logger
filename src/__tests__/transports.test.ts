@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { ConsoleTransport, FileTransport, MemoryTransport } from '../transports';
+import { ConsoleTransport, FileTransport, MemoryTransport, DiscordTransport } from '../transports';
 import { TextFormatter, JSONFormatter } from '../formatters';
 import type { LogEntry } from '../types';
 
@@ -234,3 +234,50 @@ describe('MemoryTransport', () => {
     expect(parsed.message).toBe('Test message');
   });
 });
+
+describe('DiscordTransport', () => {
+  let transport: DiscordTransport;
+  let entry: LogEntry;
+  let globalFetchSpy: jest.SpyInstance;
+
+  beforeEach(() => {
+    transport = new DiscordTransport({ webhookUrl: 'https://discord.com/api/webhooks/test/test' });
+    entry = {
+      id: 'test-1',
+      level: 'info',
+      message: 'Test message',
+      timestamp: Date.now(),
+    };
+    
+    // Mock global fetch
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        ok: true,
+        json: () => Promise.resolve({}),
+      })
+    ) as jest.Mock;
+    globalFetchSpy = jest.spyOn(global, 'fetch');
+  });
+
+  afterEach(() => {
+    globalFetchSpy.mockRestore();
+  });
+
+  it('should send log entry via fetch', async () => {
+    await transport.log(entry);
+    
+    expect(globalFetchSpy).toHaveBeenCalledTimes(1);
+    expect(globalFetchSpy).toHaveBeenCalledWith(
+      'https://discord.com/api/webhooks/test/test',
+      expect.objectContaining({
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      })
+    );
+    
+    const requestBody = JSON.parse(globalFetchSpy.mock.calls[0][1].body);
+    expect(requestBody.content).toContain('**[INFO]** Test message');
+    expect(requestBody.embeds[0].color).toBe(0x00ff00);
+  });
+});
+
