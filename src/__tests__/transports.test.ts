@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import * as path from 'path';
+import * as fs from 'node:fs';
+import * as path from 'node:path';
 import { ConsoleTransport, FileTransport, MemoryTransport, DiscordTransport } from '../transports';
 import { TextFormatter, JSONFormatter } from '../formatters';
 import type { LogEntry } from '../types';
@@ -227,7 +227,7 @@ describe('MemoryTransport', () => {
   it('should use JSON formatter when provided', () => {
     transport = new MemoryTransport({}, new JSONFormatter());
     transport.log(entry);
-    
+
     const logs = transport.getLogs();
     const parsed = JSON.parse(logs[0]);
     expect(parsed.level).toBe('info');
@@ -248,7 +248,7 @@ describe('DiscordTransport', () => {
       message: 'Test message',
       timestamp: Date.now(),
     };
-    
+
     // Mock global fetch
     global.fetch = jest.fn(() =>
       Promise.resolve({
@@ -265,7 +265,7 @@ describe('DiscordTransport', () => {
 
   it('should send log entry via fetch', async () => {
     await transport.log(entry);
-    
+
     expect(globalFetchSpy).toHaveBeenCalledTimes(1);
     expect(globalFetchSpy).toHaveBeenCalledWith(
       'https://discord.com/api/webhooks/test/test',
@@ -274,10 +274,9 @@ describe('DiscordTransport', () => {
         headers: { 'Content-Type': 'application/json' },
       })
     );
-    
+
     const requestBody = JSON.parse(globalFetchSpy.mock.calls[0][1].body);
     expect(requestBody.content).toContain('**[INFO]** Test message');
     expect(requestBody.embeds[0].color).toBe(0x00ff00);
   });
 });
-

@@ -1,5 +1,11 @@
-import * as https from 'https';
-import type { Transport, LogEntry, Formatter, DiscordTransportOptions, PlatformInfo } from '../types';
+import * as https from 'node:https';
+import type {
+  Transport,
+  LogEntry,
+  Formatter,
+  DiscordTransportOptions,
+  PlatformInfo,
+} from '../types';
 import { JSONFormatter } from '../formatters/json-formatter';
 
 /**
@@ -24,7 +30,7 @@ export class DiscordTransport implements Transport {
   async log(entry: LogEntry): Promise<void> {
     try {
       const formatted = this.formatter.format(entry, this.platformInfo);
-      
+
       const payload = {
         content: `**[${entry.level.toUpperCase()}]** ${entry.message}`,
         embeds: [

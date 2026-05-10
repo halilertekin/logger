@@ -1,4 +1,10 @@
-import type { Transport, LogEntry, Formatter, MemoryTransportOptions, PlatformInfo } from '../types';
+import type {
+  Transport,
+  LogEntry,
+  Formatter,
+  MemoryTransportOptions,
+  PlatformInfo,
+} from '../types';
 import { TextFormatter } from '../formatters/text-formatter';
 
 /**

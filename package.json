@@ -32,12 +32,18 @@
   "react-native": {
     "fs": "./shims/fs.js",
     "path": "./shims/path.js",
-    "https": "./shims/https.js"
+    "https": "./shims/https.js",
+    "node:fs": "./shims/fs.js",
+    "node:path": "./shims/path.js",
+    "node:https": "./shims/https.js"
   },
   "browser": {
     "fs": "./shims/fs.js",
     "path": "./shims/path.js",
-    "https": "./shims/https.js"
+    "https": "./shims/https.js",
+    "node:fs": "./shims/fs.js",
+    "node:path": "./shims/path.js",
+    "node:https": "./shims/https.js"
   },
   "scripts": {
     "build": "tsup",
@@ -66,7 +72,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/halilertekin/logger.git"
+    "url": "git+https://github.com/halilertekin/logger.git"
   },
   "bugs": {
     "url": "https://github.com/halilertekin/logger/issues"
