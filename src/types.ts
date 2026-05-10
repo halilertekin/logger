@@ -89,6 +89,14 @@ export interface FileTransportOptions {
 }
 
 /**
+ * Memory transport options
+ */
+export interface MemoryTransportOptions {
+  /** Maximum number of logs to keep in memory (default: 1000) */
+  limit?: number;
+}
+
+/**
  * Logger instance interface
  */
 export interface Logger {

@@ -24,10 +24,19 @@
   },
   "files": [
     "dist",
+    "shims",
     "README.md",
     "LICENSE",
     "CHANGELOG.md"
   ],
+  "react-native": {
+    "fs": "./shims/fs.js",
+    "path": "./shims/path.js"
+  },
+  "browser": {
+    "fs": "./shims/fs.js",
+    "path": "./shims/path.js"
+  },
   "scripts": {
     "build": "tsup",
     "test": "jest",

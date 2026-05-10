@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { ConsoleTransport, FileTransport } from '../transports';
+import { ConsoleTransport, FileTransport, MemoryTransport } from '../transports';
 import { TextFormatter, JSONFormatter } from '../formatters';
 import type { LogEntry } from '../types';
 
@@ -182,5 +182,55 @@ describe('FileTransport', () => {
 
     const content = fs.readFileSync(testFilePath, 'utf-8');
     expect(content).toContain('[INFO] Test message');
+  });
+});
+
+describe('MemoryTransport', () => {
+  let transport: MemoryTransport;
+  let entry: LogEntry;
+
+  beforeEach(() => {
+    transport = new MemoryTransport();
+    entry = {
+      id: 'test-1',
+      level: 'info',
+      message: 'Test message',
+      timestamp: Date.now(),
+    };
+  });
+
+  it('should store log entries', () => {
+    transport.log(entry);
+    const logs = transport.getLogs();
+    expect(logs.length).toBe(1);
+    expect(logs[0]).toContain('[INFO] Test message');
+  });
+
+  it('should respect the log limit', () => {
+    transport = new MemoryTransport({ limit: 2 });
+    transport.log({ ...entry, message: 'Message 1' });
+    transport.log({ ...entry, message: 'Message 2' });
+    transport.log({ ...entry, message: 'Message 3' });
+
+    const logs = transport.getLogs();
+    expect(logs.length).toBe(2);
+    expect(logs[0]).toContain('Message 2');
+    expect(logs[1]).toContain('Message 3');
+  });
+
+  it('should clear logs', () => {
+    transport.log(entry);
+    transport.clear();
+    expect(transport.getLogs().length).toBe(0);
+  });
+
+  it('should use JSON formatter when provided', () => {
+    transport = new MemoryTransport({}, new JSONFormatter());
+    transport.log(entry);
+    
+    const logs = transport.getLogs();
+    const parsed = JSON.parse(logs[0]);
+    expect(parsed.level).toBe('info');
+    expect(parsed.message).toBe('Test message');
   });
 });
