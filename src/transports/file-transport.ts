@@ -1,5 +1,5 @@
-import * as fs from 'node:fs';
-import * as path from 'node:path';
+import fs from '../providers/fs';
+import path from '../providers/path';
 import type { Transport, LogEntry, Formatter, FileTransportOptions } from '../types';
 import { TextFormatter } from '../formatters/text-formatter';
 

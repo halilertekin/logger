@@ -7,19 +7,70 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "react-native": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.browser.mjs",
+        "require": "./dist/index.browser.js"
+      },
+      "browser": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.browser.mjs",
+        "require": "./dist/index.browser.js"
+      },
+      "node": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js"
+      },
+      "default": {
+        "types": "./dist/index.d.ts",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js"
+      }
     },
     "./formatters": {
-      "types": "./dist/formatters/index.d.ts",
-      "import": "./dist/formatters/index.mjs",
-      "require": "./dist/formatters/index.js"
+      "react-native": {
+        "types": "./dist/formatters/index.d.ts",
+        "import": "./dist/formatters/index.browser.mjs",
+        "require": "./dist/formatters/index.browser.js"
+      },
+      "browser": {
+        "types": "./dist/formatters/index.d.ts",
+        "import": "./dist/formatters/index.browser.mjs",
+        "require": "./dist/formatters/index.browser.js"
+      },
+      "node": {
+        "types": "./dist/formatters/index.d.ts",
+        "import": "./dist/formatters/index.mjs",
+        "require": "./dist/formatters/index.js"
+      },
+      "default": {
+        "types": "./dist/formatters/index.d.ts",
+        "import": "./dist/formatters/index.mjs",
+        "require": "./dist/formatters/index.js"
+      }
     },
     "./transports": {
-      "types": "./dist/transports/index.d.ts",
-      "import": "./dist/transports/index.mjs",
-      "require": "./dist/transports/index.js"
+      "react-native": {
+        "types": "./dist/transports/index.d.ts",
+        "import": "./dist/transports/index.browser.mjs",
+        "require": "./dist/transports/index.browser.js"
+      },
+      "browser": {
+        "types": "./dist/transports/index.d.ts",
+        "import": "./dist/transports/index.browser.mjs",
+        "require": "./dist/transports/index.browser.js"
+      },
+      "node": {
+        "types": "./dist/transports/index.d.ts",
+        "import": "./dist/transports/index.mjs",
+        "require": "./dist/transports/index.js"
+      },
+      "default": {
+        "types": "./dist/transports/index.d.ts",
+        "import": "./dist/transports/index.mjs",
+        "require": "./dist/transports/index.js"
+      }
     }
   },
   "files": [

@@ -1,4 +1,4 @@
-import * as https from 'node:https';
+import https from '../providers/https';
 import type {
   Transport,
   LogEntry,
