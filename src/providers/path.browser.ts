@@ -1,4 +1,8 @@
 export default {
-  dirname: function(p: string) { return ''; },
-  join: function(...paths: string[]) { return paths.join('/'); }
+  dirname: function (_p: string) {
+    return '';
+  },
+  join: function (...paths: string[]) {
+    return paths.join('/');
+  },
 };

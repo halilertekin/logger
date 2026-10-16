@@ -1,5 +1,5 @@
 export default {
-  request: function() {
-    return { on: function() {}, write: function() {}, end: function() {} };
-  }
+  request: function () {
+    return { on: function () {}, write: function () {}, end: function () {} };
+  },
 };
